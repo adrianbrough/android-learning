@@ -11,6 +11,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    public boolean isLoggedIn = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,22 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu (Menu menu){
+        MenuItem loginItem = menu.findItem(R.id.action_login);
+        MenuItem logoutItem = menu.findItem(R.id.action_logout);
+        if (isLoggedIn) {
+            loginItem.setEnabled(false);
+            logoutItem.setEnabled(true);
+        }
+        else
+        {
+            loginItem.setEnabled(true);
+            logoutItem.setEnabled(false);
+        }
         return true;
     }
 

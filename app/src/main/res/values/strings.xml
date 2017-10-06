@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android-Learning</string>
+    <string name="action_updateLists">Update Lists</string>
     <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="action_logout">Logout</string>
 </resources>
